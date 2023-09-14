@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+ font-family: Megafon;
+}
+
+
+@font-face {
+  font-family: "MegaFon";
+  src: local("Megafon"),
+  url("./fonts/MegaFon-Graphik-LC-Web-Smbd-Regular.woff") format("woff");
+  font-weight: regular;
+}
