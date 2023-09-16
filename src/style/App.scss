@@ -29,6 +29,11 @@ ul {
   letter-spacing: -4px;
   margin-top: -16px;
   margin-right: 10px;
+  -webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 
   @include vp-1023 {
     font-size: 64px;
@@ -125,6 +130,7 @@ ul {
     display: grid;
     grid-template-columns: 110px 1fr 24px; 
     align-items: flex-start;
+    cursor: pointer;
 
     @include vp-1023{
       grid-template-columns: 1fr 24px;
@@ -203,6 +209,11 @@ ul {
     background-color: transparent;
     border: 1px solid $color-gray;
     word-wrap: break-word;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.6;
+    }
 
     &:not(:last-child) {
       margin-right: 12px;
