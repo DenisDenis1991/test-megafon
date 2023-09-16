@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/test-megafon/static/css/main.095aa515.css",
+    "main.js": "/test-megafon/static/js/main.066af7f3.js",
+    "static/js/787.8b466fa0.chunk.js": "/test-megafon/static/js/787.8b466fa0.chunk.js",
+    "static/media/MegaFon-Graphik-LC-Web-Smbd-Regular.woff": "/test-megafon/static/media/MegaFon-Graphik-LC-Web-Smbd-Regular.e4d609a57b17124206ad.woff",
+    "static/media/MegaFon-Graphik-LC-Web-Lgt-Regular.woff": "/test-megafon/static/media/MegaFon-Graphik-LC-Web-Lgt-Regular.092fb884058027f0d05c.woff",
+    "index.html": "/test-megafon/index.html",
+    "main.095aa515.css.map": "/test-megafon/static/css/main.095aa515.css.map",
+    "main.066af7f3.js.map": "/test-megafon/static/js/main.066af7f3.js.map",
+    "787.8b466fa0.chunk.js.map": "/test-megafon/static/js/787.8b466fa0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.095aa515.css",
+    "static/js/main.066af7f3.js"
+  ]
+}
