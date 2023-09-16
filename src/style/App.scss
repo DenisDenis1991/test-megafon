@@ -11,7 +11,8 @@ ul {
   padding: 86px 80px 0;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 1280px;
+  width: 100%;
 
   @include vp-1023 {
     flex-direction: column;
