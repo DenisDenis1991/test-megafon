@@ -18,3 +18,7 @@ body {
   url("./fonts/MegaFon-Graphik-LC-Web-Lgt-Regular.woff") format("woff");
   font-weight: 400;
 }
+
+html {
+  overflow-y: scroll;
+}

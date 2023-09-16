@@ -7,7 +7,6 @@ const SubItem = ({item}) => {
   const itemAnimation = useSpring({
     opacity: isActive ? 1 : 0,
     height: isActive ? 'auto' : 0,
-    delay: 200,
     overflow: 'hidden',
   });
   return (
