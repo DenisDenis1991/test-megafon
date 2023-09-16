@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import MENU from '../const';
 const initialState = {
   points: [],
+  valueAnswer: null,
+  valuePoint: null,
 }
 
 export const dataLoading = createSlice ({
@@ -13,28 +14,38 @@ export const dataLoading = createSlice ({
     },
 
     setPlus: (state, action) => {
-      console.log(action.payload)
-      // state.points = state.points.map(el =>{
-      //   if (el.heading === action.payload.heading) {
-      //     const newMenu = el.subMenu.map(item => {
-      //       if (item.id === Number(action.payload.id)) {
-      //         return({...item, value: item.value+1} )
-      //       } else {
-      //         return item
-      //       }
-      //     })
-      //     return (
-      //       {...el, value: el.value+1, subMenu: newMenu} 
-      //     )
-      //   } else {
-      //     return el
-      //   }
-      // });
+      state.points=(state.points.sort((a,b) => b.value - a.value).map(menuPoint => {
+        if(menuPoint.subMenu?.find(point => point.id === action.payload.item.id)) {
+          const newSubMenu = menuPoint.subMenu?.sort((a,b)=> b.value-a.value).map(subItem => {
+            if (subItem.id === action.payload.item.id) {
+              return({...subItem, value: subItem.value+1} )
+            }else {
+              return subItem
+            }
+          })
+          return({...menuPoint, value: menuPoint.value+1, subMenu: newSubMenu} )
+        } else {
+          return menuPoint
+        }
+      }))
     },
 
 
     setMinus: (state, action) => {
-      state.points = action.payload;
+      state.points=(state.points.sort((a,b) => b.value - a.value).map(menuPoint => {
+        if(menuPoint.subMenu?.find(point => point.id === action.payload.item.id)) {
+          const newSubMenu = menuPoint.subMenu?.sort((a,b)=> b.value-a.value).map(subItem => {
+            if (subItem.id === action.payload.item.id) {
+              return({...subItem, value: subItem.value-1} )
+            }else {
+              return subItem
+            }
+          })
+          return({...menuPoint, value: menuPoint.value-1, subMenu: newSubMenu} )
+        } else {
+          return menuPoint
+        }
+      }))
     },
    }
 })

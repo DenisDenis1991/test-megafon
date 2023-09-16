@@ -1,6 +1,5 @@
 import MainItem from "./main-item";
-import MENU from "../const";
-import {useDispatch, useSelector} from 'react-redux'
+import {useSelector} from 'react-redux'
 
 const MainList = () => {
   const menu = useSelector((state) => state.reducer.points)
