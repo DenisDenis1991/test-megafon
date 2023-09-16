@@ -14,38 +14,42 @@ export const dataLoading = createSlice ({
     },
 
     setPlus: (state, action) => {
-      state.points=(state.points.sort((a,b) => b.value - a.value).map(menuPoint => {
+      state.points=(state.points.map(menuPoint => {
         if(menuPoint.subMenu?.find(point => point.id === action.payload.item.id)) {
-          const newSubMenu = menuPoint.subMenu?.sort((a,b)=> b.value-a.value).map(subItem => {
+          const newSubMenu = menuPoint.subMenu?.map(subItem => {
             if (subItem.id === action.payload.item.id) {
               return({...subItem, value: subItem.value+1} )
             }else {
               return subItem
             }
           })
+          newSubMenu.sort((a,b)=> b.value-a.value)
           return({...menuPoint, value: menuPoint.value+1, subMenu: newSubMenu} )
         } else {
           return menuPoint
         }
       }))
+      state.points = state.points.sort((a,b) => b.value - a.value)
     },
 
 
     setMinus: (state, action) => {
       state.points=(state.points.sort((a,b) => b.value - a.value).map(menuPoint => {
         if(menuPoint.subMenu?.find(point => point.id === action.payload.item.id)) {
-          const newSubMenu = menuPoint.subMenu?.sort((a,b)=> b.value-a.value).map(subItem => {
+          const newSubMenu = menuPoint.subMenu?.map(subItem => {
             if (subItem.id === action.payload.item.id) {
               return({...subItem, value: subItem.value-1} )
             }else {
               return subItem
             }
           })
+          newSubMenu.sort((a,b)=> b.value-a.value)
           return({...menuPoint, value: menuPoint.value-1, subMenu: newSubMenu} )
         } else {
           return menuPoint
         }
       }))
+      state.points = state.points.sort((a,b) => b.value - a.value)
     },
    }
 })
